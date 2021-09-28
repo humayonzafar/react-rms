@@ -5,23 +5,23 @@ export const Wrapper = styled.div`
     max-width: var(----maxWidth);
     margin: 0 auto;
     border: 1px solid red;
+    
+     h2{
+     color: black;
+   font-size: var(--fontMed);
+  @media all and (min-width:720px){
+    font-size: var(--fontBig);   
+    }
+  }
 `;
 
 export const Content = styled.div`
    display: grid;
-   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+   grid-template-columns: repeat(auto-fill,1fr);
    grid-gap: 2em;
+   max-width: 100%;
+   
+    @media all and (min-width:720px){
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr)); 
+    }
 `;
-// export const Content = styled.div`
-//    background-color: red;
-//     display: flex;
-//     flex-wrap: wrap;
-//     flex-grow: 1;
-//     justify-content: center;
-//     gap:1.3em;
-//     @media all and (min-width: 750px){
-//     img{
-//    width: 250px;
-//     }
-//     }
-// `;

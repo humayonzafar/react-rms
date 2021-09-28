@@ -11,13 +11,13 @@ const initialMovieObject = {
 export const useMoviesFetch = () => {
 
     const [state, setState] = useState(initialMovieObject);
-    const [loading, setloading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 
     const fetchMovies = async (searchTerm = '', page) => {
         try {
             setError(false);
-            setloading(true);
+            setLoading(true);
             const movies = await API.fetchMovies(searchTerm, page);
             setState(prev => ({
                 ...movies,
@@ -26,7 +26,7 @@ export const useMoviesFetch = () => {
         } catch (e) {
             setError(true);
         } finally {
-            setloading(false);
+            setLoading(false);
         }
     }
 //initial render for mounted
