@@ -10,6 +10,8 @@ const initialMovieObject = {
 
 export const useMoviesFetch = () => {
 
+    const [searchTerm, setSearchTerm] = useState('');
+
     const [state, setState] = useState(initialMovieObject);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -29,10 +31,11 @@ export const useMoviesFetch = () => {
             setLoading(false);
         }
     }
-//initial render for mounted
+//initial render and search
     useEffect(() => {
-        fetchMovies('', 1);
-    }, []);
+        setState(initialMovieObject);
+        fetchMovies(searchTerm, 1);
+    }, [searchTerm]);
 
-    return {state,loading,error};
+    return {state, loading, error,searchTerm, setSearchTerm};
 }

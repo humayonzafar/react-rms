@@ -4,8 +4,6 @@ export const Wrapper = styled.div`
     width: 80%;
     max-width: var(----maxWidth);
     margin: 0 auto;
-    border: 1px solid red;
-    
      h2{
      color: black;
    font-size: var(--fontMed);
