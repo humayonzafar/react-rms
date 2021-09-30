@@ -11,6 +11,7 @@ const initialMovieObject = {
 export const useMoviesFetch = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
 
     const [state, setState] = useState(initialMovieObject);
     const [loading, setLoading] = useState(false);
@@ -37,5 +38,13 @@ export const useMoviesFetch = () => {
         fetchMovies(searchTerm, 1);
     }, [searchTerm]);
 
-    return {state, loading, error,searchTerm, setSearchTerm};
+    //clicked on load more button
+    useEffect(() => {
+        console.log(isLoadingMore,'isLoadingMore');
+        if(!isLoadingMore) return ;
+        fetchMovies(searchTerm, state.page+1);
+        setIsLoadingMore(false);
+    }, [isLoadingMore,searchTerm,setIsLoadingMore]);
+
+    return {state, loading, error,searchTerm, setSearchTerm, setIsLoadingMore};
 }

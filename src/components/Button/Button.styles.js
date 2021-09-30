@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.button`
    display: block;
    background-color: var(--darkGrey);
    margin:0 auto;

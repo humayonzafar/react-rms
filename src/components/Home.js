@@ -17,10 +17,10 @@ import Spinner from "./Spinner"
 import SearchBar from "./SearchBar";
 import Button from "./Button";
 
-
 const Home = () => {
-    const {state, loading, error,searchTerm, setSearchTerm} = useMoviesFetch();
-    console.log(state, loading, error, 'state')
+    const {state, loading, error,searchTerm, setSearchTerm ,setIsLoadingMore} = useMoviesFetch();
+    console.log(state, loading, error,searchTerm)
+    if(error) return  <div>Something went wrong...</div>;
     return (
         <>
             {!searchTerm && state.results[0] ?
@@ -45,10 +45,11 @@ const Home = () => {
                     />
                     ))};
             </Grid>
-            {loading && <Spinner />};
+            {loading && <Spinner />}
             {state.page < state.total_pages && !loading && (
-                <Button text='Load More' />
+                <Button text='Load More' callback={(()=>setIsLoadingMore(true))} />
             )};
+
         </>
     );
 };
