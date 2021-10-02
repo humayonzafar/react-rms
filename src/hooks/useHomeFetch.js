@@ -40,11 +40,10 @@ export const useMoviesFetch = () => {
 
     //clicked on load more button
     useEffect(() => {
-        console.log(isLoadingMore,'isLoadingMore');
         if(!isLoadingMore) return ;
         fetchMovies(searchTerm, state.page+1);
         setIsLoadingMore(false);
-    }, [isLoadingMore,searchTerm,setIsLoadingMore]);
+    }, [isLoadingMore,searchTerm,state,setIsLoadingMore]);
 
     return {state, loading, error,searchTerm, setSearchTerm, setIsLoadingMore};
 }
