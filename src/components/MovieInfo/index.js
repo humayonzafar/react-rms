@@ -1,4 +1,5 @@
 import React from 'react';
+//components
 //styles
 import {Wrapper,Content,Text} from "./MovieInfo.styles";
 import Thumb from "../Thumb";
