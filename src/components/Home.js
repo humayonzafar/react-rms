@@ -49,6 +49,8 @@ const Home = () => {
             {state.page < state.total_pages && !loading && (
                 <Button text='Load More' callback={(()=>setIsLoadingMore(true))} />
             )};
+            {!loading && state.results.length<=0 &&
+            <h2 className={'text-center'}>No Records Found..!</h2>}
 
         </>
     );

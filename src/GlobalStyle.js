@@ -44,5 +44,8 @@ p {
     font-size: 1rem;
     color: var(--white);
 }
+.text-center{
+text-align: center;
+}
 `;
 

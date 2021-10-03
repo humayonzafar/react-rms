@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
 import API from "../API";
+//helpers
+import {isPersisted} from "../helpers";
 
 const initialMovieObject = {
     page: 0,
@@ -12,7 +14,6 @@ export const useMoviesFetch = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [isLoadingMore, setIsLoadingMore] = useState(false);
-
     const [state, setState] = useState(initialMovieObject);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -34,6 +35,13 @@ export const useMoviesFetch = () => {
     }
 //initial render and search
     useEffect(() => {
+        if(!searchTerm) {
+            const sessionState = isPersisted('homeState');
+            if(sessionState){
+                setState(sessionState);
+                return ;
+            }
+        }
         setState(initialMovieObject);
         fetchMovies(searchTerm, 1);
     }, [searchTerm]);
@@ -43,7 +51,11 @@ export const useMoviesFetch = () => {
         if(!isLoadingMore) return ;
         fetchMovies(searchTerm, state.page+1);
         setIsLoadingMore(false);
-    }, [isLoadingMore,searchTerm,state,setIsLoadingMore]);
+    }, [isLoadingMore,searchTerm,state.page]);
+
+    useEffect(()=>{
+       if(!searchTerm) sessionStorage.setItem('homeState',JSON.stringify(state));
+    },[searchTerm,state]);
 
     return {state, loading, error,searchTerm, setSearchTerm, setIsLoadingMore};
 }
