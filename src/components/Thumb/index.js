@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 //styles
 import {Image} from './Thumb.styles';
 
-const Thumb = ({image, movieId, clickable}) => (
+const Thumb = ({image, movieId, clickable, classes}) => (
     <div>
         {clickable ?
             (<Link to={`/${movieId}`}>
-                <Image src={image} alt={'movie-thumb'}/>
+                <Image className={classes} src={image} alt={'movie-thumb'}/>
             </Link>) :
             <Image src={image} alt={'movie-thumb'}/>
         }

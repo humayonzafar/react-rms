@@ -18,8 +18,8 @@ import SearchBar from "./SearchBar";
 import Button from "./Button";
 
 const Home = () => {
-    const {state, loading, error,searchTerm, setSearchTerm ,setIsLoadingMore} = useMoviesFetch();
-    if(error) return  <div>Something went wrong...</div>;
+    const {state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore} = useMoviesFetch();
+    if (error) return <div>Something went wrong...</div>;
     return (
         <>
             {!searchTerm && state.results[0] ?
@@ -32,23 +32,24 @@ const Home = () => {
                 null
             }
             <SearchBar setSearchTerm={setSearchTerm}/>
-            <Grid header={searchTerm? 'Search Results' : 'Popular Movies'}>
-                {state.results.map( (movie,index)=>(
+            <Grid header={searchTerm ? 'Search Results' : 'Popular Movies'}>
+                {state.results.map((movie, index) => (
                     movie.poster_path && <Thumb
-                    key={index}
-                    clickable
-                    image={movie.poster_path ?
-                        IMAGE_BASE_URL+POSTER_SIZE+movie.poster_path :
-                        defaultImage}
-                    movieId = {movie.id}
+                        classes='movieThumb'
+                        key={index}
+                        clickable
+                        image={movie.poster_path ?
+                            IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path :
+                            defaultImage}
+                        movieId={movie.id}
                     />
-                    ))};
+                ))};
             </Grid>
-            {loading && <Spinner />}
+            {loading && <Spinner/>}
             {state.page < state.total_pages && !loading && (
-                <Button text='Load More' callback={(()=>setIsLoadingMore(true))} />
+                <Button text='Load More' callback={(() => setIsLoadingMore(true))}/>
             )};
-            {!loading && state.results.length<=0 &&
+            {!loading && state.results.length <= 0 &&
             <h2 className={'text-center'}>No Records Found..!</h2>}
 
         </>

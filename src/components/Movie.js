@@ -18,14 +18,14 @@ const Movie = () => {
     const {state: movie, loading, error} = useMovieFetch(movieId);
     if (loading) return <Spinner/>;
     if (error) return <div>Something went wrong...!</div>;
-    console.log(movie.actors ,'movie.actors ');
+    console.log(movie.actors, 'movie.actors ');
     return (
         <>
             <BreadCrumb movieTitle={movie.original_title}/>
             <MovieInfo movie={movie}/>
             <MovieInfoBar time={movie.runtime} budget={movie.budget} revenue={movie.revenue}/>
             {movie.actors.length > 0 ? <Grid header='Actors'>
-                {movie.actors.map((actor,index) => (
+                {movie.actors.map((actor, index) => (
                     <Actor
                         key={index}
                         imageUrl={actor.profile_path ?

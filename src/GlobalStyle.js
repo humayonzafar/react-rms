@@ -47,5 +47,12 @@ p {
 .text-center{
 text-align: center;
 }
+
+.movieThumb{
+@media all and (min-width:720px){
+   width: 400px;
+   height:400px;  
+    }
+}
 `;
 
