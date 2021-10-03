@@ -29,6 +29,7 @@ export const useMoviesFetch = () => {
             }));
         } catch (e) {
             setError(true);
+            console.log(e,'use home fetch error');
         } finally {
             setLoading(false);
         }
