@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.button`
    display: block;
    background-color: var(--darkGrey);
-   margin:0 auto;
+   margin: 1.2em auto;
    color: white;
    padding: 0.85em 1.85em;
    width: 30%;

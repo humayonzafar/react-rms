@@ -17,10 +17,12 @@ export const Wrapper = styled.div`
 `;
 
 export const Image = styled.img` 
-   object-fit: cover;
+   object-fit: contain;
    display: block;
    width: 100%;
    border-radius: 1em;
+   min-width: 260px;
+   height: 394px;
    :hover{
     opacity: 0.6;
    }

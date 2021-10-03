@@ -18,23 +18,25 @@ const Movie = () => {
     const {state: movie, loading, error} = useMovieFetch(movieId);
     if (loading) return <Spinner/>;
     if (error) return <div>Something went wrong...!</div>;
+    console.log(movie.actors ,'movie.actors ');
     return (
         <>
             <BreadCrumb movieTitle={movie.original_title}/>
             <MovieInfo movie={movie}/>
             <MovieInfoBar time={movie.runtime} budget={movie.budget} revenue={movie.revenue}/>
-            <Grid header='Actors'>
-                {movie.actors.map(actor => (
+            {movie.actors.length > 0 ? <Grid header='Actors'>
+                {movie.actors.map((actor,index) => (
                     <Actor
-                        key={actor.credit_id}
-                           imageUrl={actor.profile_path ?
-                               `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}` :
-                               noImage}
-                            name={actor.name}
-                    character={actor.character}
+                        key={index}
+                        imageUrl={actor.profile_path ?
+                            `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}` :
+                            noImage}
+                        name={actor.name}
+                        character={actor.character}
                     />
-                ))};
-            </Grid>
+                ))}
+            </Grid> : <h2 className={'text-center'}>No Related Data Found..!</h2>
+            }
         </>
     );
 }

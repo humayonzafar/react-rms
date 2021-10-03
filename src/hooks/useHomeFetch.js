@@ -15,7 +15,7 @@ export const useMoviesFetch = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [isLoadingMore, setIsLoadingMore] = useState(false);
     const [state, setState] = useState(initialMovieObject);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
     const fetchMovies = async (searchTerm = '', page) => {
@@ -39,6 +39,7 @@ export const useMoviesFetch = () => {
             const sessionState = isPersisted('homeState');
             if(sessionState){
                 setState(sessionState);
+                setLoading(false);
                 return ;
             }
         }

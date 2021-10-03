@@ -14,7 +14,7 @@ const MovieInfo = ({movie})=>(
             movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}` : NoImage
         }
         clickable={false}
-        ></Thumb>
+        />
         <Text>
         <h1>{movie.title}</h1>
         <h3>Plot</h3>

@@ -33,9 +33,9 @@ const Home = () => {
             }
             <SearchBar setSearchTerm={setSearchTerm}/>
             <Grid header={searchTerm? 'Search Results' : 'Popular Movies'}>
-                {state.results.map(movie=>(
-                   <Thumb
-                    key={movie.id}
+                {state.results.map( (movie,index)=>(
+                    movie.poster_path && <Thumb
+                    key={index}
                     clickable
                     image={movie.poster_path ?
                         IMAGE_BASE_URL+POSTER_SIZE+movie.poster_path :
