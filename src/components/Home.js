@@ -19,7 +19,6 @@ import Button from "./Button";
 
 const Home = () => {
     const {state, loading, error,searchTerm, setSearchTerm ,setIsLoadingMore} = useMoviesFetch();
-    console.log(state, loading, error,searchTerm)
     if(error) return  <div>Something went wrong...</div>;
     return (
         <>
