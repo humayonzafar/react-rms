@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom"
 
 export const Wrapper = styled.div`
    background-color: var(--darkGrey);
@@ -23,4 +24,14 @@ export const TMDBLogoImg = styled.img`
      @media(min-width: 500px){
     width: 100px;
     }
+`;
+
+export const NavLink = styled(Link)`
+    color: white;
+    text-decoration: none;
+    font-size: 1.7rem;
+    transition: 0.3s;
+  &:hover {
+     font-size: 1.9rem;
+  }
 `;
