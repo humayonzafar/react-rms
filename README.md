@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# HZ Movies
+> A web based app which uses the movies The Movie Database(TMDB) api for fetching all the data and allows users to interact with it using a Single Page Application(SPA) built using React.js.
+>
+> Live demo [_here_](https://hzmovies-react.netlify.app/). <!-- If you have the project hosted somewhere, include the link here. -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Contact](#contact)
 
-## Available Scripts
+## General Information
+This is a react based application used for learning React.js with functional based approach. It uses The Movie Database API ([TMDB](https://www.themoviedb.org/)) for listing the latest movies. The movies can be searched as well. The searched movie displays brief description about the movie, its revenue, budget running time..
 
-In the project directory, you can run:
+## Technologies Used
+- [React.js](https://reactjs.org/)
+- [TMDB](https://www.themoviedb.org/)
 
-### `yarn start`
+## Features
+- Listing the latest movies with pagination
+- Search Movies
+- Get Movie details including cast, running time, revenue and budget.
+- Listing the movie cast with pictures if available.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshots
+![Movie List](https://res.cloudinary.com/humayoncloud/image/upload/v1641579143/git/rms/hzmoves-1_ycpqhv.png)
 
-### `yarn test`
+![Movie Details](https://res.cloudinary.com/humayoncloud/image/upload/v1641579086/git/rms/hzmovies2_n3pglu.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Movie Search](https://res.cloudinary.com/humayoncloud/image/upload/v1641579049/git/rms/lotr_qkmcju.png)
 
-### `yarn build`
+## Setup
+Clone the project using:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `git clone https://github.com/humayonzafar/react-rms.git`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install the dependencies using:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm install`
 
-### `yarn eject`
+Get an **API key** from [TMDB](https://www.themoviedb.org/) and set the api key in the env as REACT_APP_API_KEY. And voila you are done.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contact
+Created by [@humayonzafar](https://www.humayonzafar.com/) - feel free to contact me!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](LICENSE)
