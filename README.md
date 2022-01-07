@@ -1,7 +1,7 @@
 # HZ Movies
 > A web based app which uses the movies The Movie Database(TMDB) api for fetching all the data and allows users to interact with it using a Single Page Application(SPA) built using React.js.
 >
-> Live demo [_here_](https://hzmovies-react.netlify.app/). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_here_](https://hzmovies-react.netlify.app/).
 
 ## Table of Contents
 * [General Info](#general-information)
