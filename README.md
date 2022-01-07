@@ -12,7 +12,7 @@
 * [Contact](#contact)
 
 ## General Information
-This is a react based application used for learning React.js with functional based approach. It uses The Movie Database API ([TMDB](https://www.themoviedb.org/)) for listing the latest movies. The movies can be searched as well. The searched movie displays brief description about the movie, its revenue, budget running time..
+This is a react based application used for learning React.js with functional based approach. It uses The Movie Database API ([TMDB](https://www.themoviedb.org/)) for listing the latest movies. The movies can be searched as well. The searched movie displays brief description about the movie, its revenue, budget and running time. The move details page also display the cast with their real name and the name which the actor played in that pmovie.
 
 ## Technologies Used
 - [React.js](https://reactjs.org/)
